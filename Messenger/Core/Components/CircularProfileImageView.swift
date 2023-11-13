@@ -30,11 +30,11 @@ enum ProfileImageSize {
 
 struct CircularProfileImageView: View {
     
-    let user: User
+    var user: User?
     let size: ProfileImageSize
     
     var body: some View {
-        if let imageUrl = user.profileImageURL {
+        if let imageUrl = user?.profileImageURL {
             Image(imageUrl)
                 .resizable()
                 .scaledToFill()

@@ -10,7 +10,11 @@ import SwiftUI
 struct InboxView: View {
     
     @State private var showMessageView = false
-    @State private var user = User.MOCK_USER
+    @StateObject var inboxViewModel = InboxViewModel()
+    
+    private var user: User? {
+        return inboxViewModel.currentUser
+    }
     
     var body: some View {
         NavigationStack {
